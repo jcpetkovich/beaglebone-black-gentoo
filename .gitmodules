@@ -1,0 +1,6 @@
+[submodule "u-boot"]
+	path = u-boot
+	url = git://git.denx.de/u-boot.git
+[submodule "linux"]
+	path = linux
+	url = https://github.com/beagleboard/linux.git
