@@ -16,11 +16,13 @@ if [[ ! -d staging/usr/portage ]]; then
     tar xavf portage-latest.tar.bz2 -C staging/usr/
 fi
 
+TARGET_CHOST=armv7a-hardfloat-linux-gnueabi
+
 echo "[BUILDING UBOOT]"
 pushd u-boot > /dev/null
 make mrproper
-make ARCH=arm CROSS_COMPILE=armv7a-hardfloat-linux-gnueabihf- am335x_boneblack_config
-make ARCH=arm CROSS_COMPILE=armv7a-hardfloat-linux-gnueabihf-
+make ARCH=arm CROSS_COMPILE=${TARGET_CHOST}- am335x_boneblack_config
+make ARCH=arm CROSS_COMPILE=${TARGET_CHOST}-
 popd
 
 UBOOT_TOOLS=$(realpath u-boot/tools)
@@ -29,14 +31,14 @@ export PATH="${UBOOT_TOOLS}:${PATH}"
 echo "[BUILDING KERNEL]"
 pushd linux > /dev/null
 make mrproper
-make ARCH=arm CROSS_COMPILE=armv7a-hardfloat-linux-gnueabihf- bb.org_defconfig
-make ARCH=arm CROSS_COMPILE=armv7a-hardfloat-linux-gnueabihf- menuconfig
-make ARCH=arm CROSS_COMPILE=armv7a-hardfloat-linux-gnueabihf- -j5
-make ARCH=arm CROSS_COMPILE=armv7a-hardfloat-linux-gnueabihf- -j5 uImage dtbs LOADADDR=0x82000000
-make ARCH=arm CROSS_COMPILE=armv7a-hardfloat-linux-gnueabihf- -j5 modules
+make ARCH=arm CROSS_COMPILE=${TARGET_CHOST}- bb.org_defconfig
+make ARCH=arm CROSS_COMPILE=${TARGET_CHOST}- menuconfig
+make ARCH=arm CROSS_COMPILE=${TARGET_CHOST}- -j5
+make ARCH=arm CROSS_COMPILE=${TARGET_CHOST}- -j5 uImage dtbs LOADADDR=0x82000000
+make ARCH=arm CROSS_COMPILE=${TARGET_CHOST}- -j5 modules
 
 echo "[INSTALLING KERNEL]"
-make ARCH=arm CROSS_COMPILE=armv7a-hardfloat-linux-gnueabihf- INSTALL_MOD_PATH=../staging modules_install
+make ARCH=arm CROSS_COMPILE=${TARGET_CHOST}- INSTALL_MOD_PATH=../staging modules_install
 popd
 
 cp linux/arch/arm/boot/uImage staging/boot
