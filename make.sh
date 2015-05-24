@@ -45,3 +45,14 @@ cp linux/arch/arm/boot/uImage staging/boot
 cp linux/arch/arm/boot/zImage staging/boot
 cp linux/arch/arm/boot/dts/am335x-boneblack.dtb staging/boot
 mkdir -p staging/boot/uboot
+
+echo "[CONFIGURING PORTAGE]"
+cat <<EOF > staging/var/lib/portage/world
+app-misc/screen
+app-portage/eix
+app-portage/genlop
+app-portage/gentoolkit
+app-portage/layman
+sys-apps/usbutils
+www-servers/apache
+EOF
