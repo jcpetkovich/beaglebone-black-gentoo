@@ -1,14 +1,17 @@
 # beaglebone-black-gentoo
 
 These are scripts and tools for setting up and configuring gentoo on the
-beaglebone black.
+beaglebone black. The scripts assume you have a `gcc` crosscompiler for the
+`armv7a-hardfloat-linux-gnueabi` target.
 
-A quick synopses:
+A quick synopses, assuming you're using gentoo:
 
 wget <stage3 tarball>
 wget <portage-latest>
 
 ```
+$ sudo emerge crossdev
+$ sudo crossdev -S -P -v -t armv7a-hardfloat-linux-gnueabi
 $ git clone https://github.com/jcpetkovich/beaglebone-black-gentoo.git
 $ cd beaglebone-black-gentoo
 $ wget <stage3-armv7a_hardfp tarball>
