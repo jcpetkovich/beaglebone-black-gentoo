@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-sudo chown root:root -R staging
 pushd staging
 sudo tar cvzpf ../deploy.tar.gz .
 popd
