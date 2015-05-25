@@ -11,6 +11,8 @@ wget <portage-latest>
 ```
 $ git clone https://github.com/jcpetkovich/beaglebone-black-gentoo.git
 $ cd beaglebone-black-gentoo
+$ wget <stage3-armv7a_hardfp tarball>
+$ wget <portage-latest.tar.bz2>
 $ ./make.sh
 $ ./mkroot.sh
 $ ./mksdcard.sh
