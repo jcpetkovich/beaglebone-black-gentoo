@@ -9,12 +9,12 @@ if [ ! -f stage3-armv7a_hardfp-*.tar.bz2 ]; then
     exit 1
 fi
 
-if [[ ! -f portage-latest.tar.bz2 ]]; then
+if [ ! -f portage-latest.tar.bz2 ]; then
     echo "Can't find portage, download portage-latest.tar.bz2"
     exit 1
 fi
 
-if [[ ! -d staging/usr/portage ]]; then
+if [ ! -d staging/usr/portage ]; then
     echo "[SETTING UP ROOTFS (need root)]"
     sudo tar xavf stage3-armv7a_hardfp-*.tar.bz2 -C staging
     sudo tar xavf portage-latest.tar.bz2 -C staging/usr/
