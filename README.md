@@ -6,9 +6,6 @@ beaglebone black. The scripts assume you have a `gcc` crosscompiler for the
 
 A quick synopses, assuming you're using gentoo:
 
-wget <stage3 tarball>
-wget <portage-latest>
-
 ```
 $ sudo emerge crossdev
 $ sudo crossdev -S -P -v -t armv7a-hardfloat-linux-gnueabi
