@@ -15,7 +15,6 @@ $ wget <stage3-armv7a_hardfp tarball>
 $ wget <portage-latest.tar.bz2>
 $ ./make.sh
 $ ./mkroot.sh
-$ ./mksdcard.sh
 $ sudo ./mksdcard.sh /dev/sdc u-boot/MLO u-boot/u-boot.img linux/arch/arm/boot/uImage deploy.tar.gz
 ```
 
