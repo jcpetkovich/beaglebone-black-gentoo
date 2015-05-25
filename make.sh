@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+# This script is idempotent, it will build everything from scratch assuming
+# you've downloaded the stage3 tarball you want, and the portage-latest
+# snapshot. It will get you up and running with a beaglebone black install that
+# has the USB0 gadget interface completely setup so you can bridge your
+# internet, or ssh into 192.168.7.2, just like the out-of-the-box debian
+# install.
+
 echo "[THIS SCRIPT USES ROOT, C-c IF YOU HAVEN'T READ IT]"
 
 sleep 5
