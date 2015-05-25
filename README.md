@@ -12,7 +12,7 @@ wget <portage-latest>
 ```
 $ sudo emerge crossdev
 $ sudo crossdev -S -P -v -t armv7a-hardfloat-linux-gnueabi
-$ git clone https://github.com/jcpetkovich/beaglebone-black-gentoo.git
+$ git clone --recursive https://github.com/jcpetkovich/beaglebone-black-gentoo.git
 $ cd beaglebone-black-gentoo
 $ wget <stage3-armv7a_hardfp tarball>
 $ wget <portage-latest.tar.bz2>
