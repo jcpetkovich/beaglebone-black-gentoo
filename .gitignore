@@ -1,2 +1,5 @@
 staging
+portage-latest.tar.bz2
+stage3-*.tar.bz2
 deploy.tar.gz
+*.iso.gz
