@@ -11,6 +11,10 @@ echo "[THIS SCRIPT USES ROOT, C-c IF YOU HAVEN'T READ IT]"
 
 sleep 5
 
+if [ ! -d staging ]; then
+    mkdir staging
+fi
+
 if [ ! -f stage3-armv7a_hardfp-*.tar.bz2 ]; then
     echo "Can't find stage3, download stage3-armv7a_hardfp-*.tar.bz2"
     exit 1
