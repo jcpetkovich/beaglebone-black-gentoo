@@ -67,13 +67,13 @@ if [ ! -f linux/arch/arm/boot/uImage ]; then
     make ARCH=arm CROSS_COMPILE=${TARGET_CHOST}- -j5 modules
 
     echo "[INSTALLING KERNEL]"
-    make ARCH=arm CROSS_COMPILE=${TARGET_CHOST}- INSTALL_MOD_PATH=../staging modules_install
+    sudo make ARCH=arm CROSS_COMPILE=${TARGET_CHOST}- INSTALL_MOD_PATH=../staging modules_install
     popd
 
-    cp linux/arch/arm/boot/uImage staging/boot
-    cp linux/arch/arm/boot/zImage staging/boot
-    cp linux/arch/arm/boot/dts/am335x-boneblack.dtb staging/boot
-    mkdir -p staging/boot/uboot
+    sudo cp linux/arch/arm/boot/uImage staging/boot
+    sudo cp linux/arch/arm/boot/zImage staging/boot
+    sudo cp linux/arch/arm/boot/dts/am335x-boneblack.dtb staging/boot
+    sudo mkdir -p staging/boot/uboot
 
 else
     echo "  [SKIPPING KERNEL]"
